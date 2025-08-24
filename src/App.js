@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js 
+import React from "react";
+import CanvasScene from "./components/CanvasScene";
+import UIControls from "./components/UIControls";
+import { ModelParamsProvider } from "./hooks/useModelParams";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ModelParamsProvider>
+      <div className="flex h-screen">
+        <div className="flex-1 bg-black">
+          <CanvasScene />
+        </div>
+        <div className="w-80 bg-gray-800 p-4 overflow-y-auto">
+          <UIControls />
+        </div>
+      </div>
+    </ModelParamsProvider>
   );
 }
 

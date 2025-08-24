@@ -1,0 +1,6 @@
+/* global styles */ 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom scrollbar or loader styles can go here */
